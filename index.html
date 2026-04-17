@@ -9,45 +9,71 @@
 </head>
 <body>
     <section class="to-do-container" data-testid="test-todo-card" role="region">
-        <header>
-            <div class="to-do-header-top flex">
-                <p class="button-like-icons"><strong  data-testid="test-todo-priority" aria-label="Priority/Status">Low</strong></p>
-                <div>
-                    <button type="button" class="btn" data-testid="test-todo-edit-button" aria-label="Delete Button"><i class="fa-regular fa-trash-can"></i></button>
-                    <button type="button" class="btn" data-testid="test-todo-delete-button" aria-label="Edit Buttons"><i class="fa-solid fa-pen"></i></button>
+        <div id="viewmode">
+            <header>
+                    <div class="to-do-header-top flex">
+                        <p class="button-like-icons"><strong  data-testid="test-todo-priority" aria-label="Priority/Status">Low</strong></p>
+                        <div>
+                            <button type="button" class="btn" data-testid="test-todo-delete-button" aria-label="Delete Button"><i class="fa-regular fa-trash-can"></i></button>
+                            <button type="button" class="btn" data-testid="test-todo-edit-button" aria-label="Edit Button"><i class="fa-solid fa-pen"></i></button>
+                        </div>
+                    </div>
+                    <h2 data-testid="test-todo-title">TITLE</h2>
+                    <div class="to-do-header-below flex">
+                        <ul data-testid="test-todo-tags" role="list">
+                            <li class="button-like-icons" data-testid="test-todo-tag-work" aria-label="Work Tag">Work</li>
+                            <li class="button-like-icons" aria-label="Urgent Tag" data-testid="test-todo-tag-urgent">Urgent</li>
+                        </ul>
+                        <div>
+                            <p class="button-like-icons" data-testid="test-todo-status">In Progress</p>
+                        </div>
+                    </div>
+            </header>
+            <hr>
+            <div class="to-do-content flex">
+                <div class="to-do-description">
+                    <p class="to-do-description-para" data-testid="test-todo-description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit sunt nobis maxime aut nostrum neque ipsa esse. Molestias tempore sit animi corporis, incidunt dolorem dolores, corrupti soluta aliquam odit perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta soluta perspiciatis laudantium eveniet sed ullam, sequi, odit magni optio placeat atque quaerat saepe et expedita aliquam voluptatibus reprehenderit hic in.
+                    </p>
                 </div>
-            </div>
-            <h2 data-testid="test-todo-title">TITLE</h2>
-            <div class="to-do-header-below flex">
-                <ul data-testid="test-todo-tags" role="list">
-                    <li class="button-like-icons" data-testid="test-todo-tag-work" aria-label="Work Tag">Work</li>
-                    <li class="button-like-icons" aria-label="Urgent Tag" data-testid="test-todo-tag-urgent">Urgent</li>
-                </ul>
-                <div>
-                    <p class="button-like-icons" data-testid="test-todo-status">In Progress</p>
-                </div>
-            </div>
-        </header>
-        <hr>
-        <div class="to-do-content flex">
-            <div class="to-do-description">
-                <p class="to-do-description-para" data-testid="test-todo-description">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit sunt nobis maxime aut nostrum neque ipsa esse. Molestias tempore sit animi corporis, incidunt dolorem dolores, corrupti soluta aliquam odit perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta soluta perspiciatis laudantium eveniet sed ullam, sequi, odit magni optio placeat atque quaerat saepe et expedita aliquam voluptatibus reprehenderit hic in.
-                </p>
-            </div>
-            <div class="to-do-control">
-                <p class="margin-adjust" data-testid="test-todo-due-date"><span>Due on:</span><br><time datetime="2026-04-20" class="button-like-icons showcase">20th April, 2026</time></p>
-                <hr>
-                <p class="margin-adjust" data-testid="test-todo-time-remaining">Time Range: <br><span class="button-like-icons showcase">12 Days Remainning</span></p>
-                <hr>
-                <div class="margin-adjust">
-                    <div class="checkbox-container">
-                        <label for="complete-checkbox">Mark as Complete:</label>
-                        <input type="checkbox" name="complete" id="complete-checkbox" data-testid="test-todo-complete-toggle">
+                <div class="to-do-control">
+                    <p class="margin-adjust" data-testid="test-todo-due-date"><span>Due on:</span><br><time datetime="2026-04-20" class="button-like-icons showcase">20th April, 2026</time></p> <hr>
+                    <p class="margin-adjust" data-testid="test-todo-time-remaining">Time Range: <br><span class="button-like-icons showcase">12 Days Remaining</span></p><hr>
+                    <div class="margin-adjust">
+                        <div class="checkbox-container">
+                            <label for="complete-checkbox">Mark as Complete:</label>
+                            <input type="checkbox" name="complete" id="complete-checkbox" data-testid="test-todo-complete-toggle">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+            
+
+    <form id="edit-mode" class="hidden" data-testid="test-todo-edit-form">
+
+        <label for="edit-title">Title</label>
+        <input id="edit-title" data-testid="test-todo-edit-title-input" />
+
+        <label for="edit-desc">Description</label>
+        <textarea id="edit-desc" data-testid="test-todo-edit-description-input"></textarea>
+
+        <label for="edit-priority">Priority</label>
+        <select id="edit-priority" data-testid="test-todo-edit-priority-select">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+        </select>
+
+        <label for="edit-date">Due Date</label>
+        <input type="datetime-local" id="edit-date" data-testid="test-todo-edit-due-date-input" />
+
+        <div class="form-actions">
+            <button type="button" class="btn btn-secondary" data-testid="test-todo-cancel-button">Cancel</button>
+            <button type="button" class="btn btn-primary" data-testid="test-todo-save-button">Save</button>
+        </div>
+
+    </form>
     </section>
     <script type="module" src="main.js"></script>
 </body>

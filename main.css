@@ -10,7 +10,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.to-do-container {
+.to-do-container #viewmode {
     max-width: 600px;
     margin: 0 auto;
     background-color: #ffffff;
@@ -116,6 +116,105 @@ hr {
     color: #555;
 }
 
+#edit-mode {
+    max-width: 600px;
+    margin: 20px auto 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+}
+
+#edit-mode label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+}
+
+#edit-mode input,
+#edit-mode textarea,
+#edit-mode select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    background-color: #fafafa;
+    color: #333;
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#edit-mode textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#edit-mode input:focus,
+#edit-mode textarea:focus,
+#edit-mode select:focus {
+    outline: none;
+    border-color: #6ca0f9;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+
+.btn {
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: #e0e0e0;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn i {
+    cursor: pointer;
+}
+
+.btn-primary {
+    border-radius: 12px;
+    padding: 10px 18px;
+    min-width: 100px;
+    background-color: #1976d2;
+    color: #ffffff;
+}
+
+.btn-secondary {
+    border-radius: 12px;
+    padding: 10px 18px;
+    min-width: 100px;
+    background-color: #f5f5f5;
+    color: #333333;
+    border: 1px solid #d1d5db;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    opacity: 0.95;
+}
+
 .margin-adjust {
     width: 100%;
     padding: 10px 0;
@@ -145,6 +244,10 @@ hr {
     margin-right: 10px;
     font-weight: 500;
     color: #333;
+}
+
+.hidden {
+    display: none;
 }
 
 @media (max-width: 500px) {
